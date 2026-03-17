@@ -3512,7 +3512,8 @@
       // ===== ALDER THE LION AI CHATBOT (Phase 6.3) =====
       var alderChatOpen = false;
       var alderGreetingDismissed = false;
-      var ALDER_WEBHOOK = "https://n8n.srv1502264.hstgr.cloud/webhook/chat";
+      var ALDER_WEBHOOK =
+        "https://automation.aci-rpas.cloud/webhook/alder-chatbot";
 
       function alderDismissGreeting() {
         var g = document.getElementById("alder-greeting");
@@ -3645,9 +3646,8 @@
       function alderGetSession() {
         var s = sessionStorage.getItem("alder_rpas");
         if (!s) {
-          s = "r" + Math.ran;
-          // Specialization button is added via openEditUser for analysts
-          dom().toString(36).substr(2, 9);
+          s = "r" + Math.random().toString(36).substr(2, 9);
+          Math.ran;
           sessionStorage.setItem("alder_rpas", s);
         }
         return s;
