@@ -3512,8 +3512,7 @@
       // ===== ALDER THE LION AI CHATBOT (Phase 6.3) =====
       var alderChatOpen = false;
       var alderGreetingDismissed = false;
-      var ALDER_WEBHOOK =
-        "https://rooky-mumblingly-magda.ngrok-free.dev/webhook/chat";
+      var ALDER_WEBHOOK = "https://n8n.srv1502264.hstgr.cloud/webhook/chat";
 
       function alderDismissGreeting() {
         var g = document.getElementById("alder-greeting");
@@ -4346,15 +4345,13 @@
             });
           await sb.from("notifications").insert(notifs);
         } else {
-          await sb
-            .from("notifications")
-            .insert([
-              {
-                user_id: t.from_analyst,
-                message: "Your transfer request was declined by the admin.",
-                type: "system",
-              },
-            ]);
+          await sb.from("notifications").insert([
+            {
+              user_id: t.from_analyst,
+              message: "Your transfer request was declined by the admin.",
+              type: "system",
+            },
+          ]);
         }
         closeModal("modal-transfer");
         showToast(
