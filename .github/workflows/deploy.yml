@@ -1,0 +1,38 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /docker/website
+            git pull origin main
+            echo "✅ Deployed successfully!"
+```
+
+---
+
+## How to Create in VSCode
+
+1. In your project folder create `.github` folder
+2. Inside that create `workflows` folder
+3. Inside that create `deploy.yml`
+4. Paste the content above
+5. Save
+
+Then:
+```
+git add .
+git commit -m "add: auto-deploy GitHub Actions"
+git push origin main
