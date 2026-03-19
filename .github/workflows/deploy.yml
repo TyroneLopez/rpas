@@ -18,21 +18,4 @@ jobs:
           script: |
             cd /docker/website
             git pull origin main
-            echo "✅ Deployed successfully!"
-```
-
----
-
-## How to Create in VSCode
-
-1. In your project folder create `.github` folder
-2. Inside that create `workflows` folder
-3. Inside that create `deploy.yml`
-4. Paste the content above
-5. Save
-
-Then:
-```
-git add .
-git commit -m "add: auto-deploy GitHub Actions"
-git push origin main
+            echo "Deployed successfully!"
